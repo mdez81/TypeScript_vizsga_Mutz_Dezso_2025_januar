@@ -1,3 +1,4 @@
+import { Category } from "./category";
 import { Participant } from "./participant";
 
 export interface Event {
@@ -5,5 +6,5 @@ export interface Event {
     name: string;
     location: string;
     time: string;
-    participants: Participant;
+    category: Category;
 }

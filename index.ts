@@ -18,7 +18,7 @@ const event1: Event = {
   name: "php worksop", 
   location: "Main stree t 1", 
   time: "2025-1-21 10:00:00" ,
-  participants: workshopCategory
+  category: workshopCategory
 };
 
 
@@ -40,23 +40,23 @@ myEvent.createEvent(1,1);
 
 
 console.log("események:");
-//library.listBorrowedBooks().forEach(book => console.log(`- ${book.title} by ${book.author}`));
+myEvent.listEvents().forEach(event => console.log(`- ${event.name} by ${event.location}`));
+
 
 
 
 myEvent.returnEvent(1);
-console.log("Visszavitel után kölcsönzött könyvek:");
-
-/*library.listBorrowedBooks().forEach(book => console.log(`- ${book.title} by ${book.author}`));
+console.log("Törlés utánni események");
+myEvent.listEvents().forEach(event => console.log(`- ${event.name} by ${event.location}`));
 
 
 console.log("Keresés 'War' címszóra:");
 
-library.findBooksByTitle("War").forEach(book => console.log(`- ${book.title} by ${book.author}`));
+myEvent.finEventsByTitle("title1").forEach(event => console.log(`- ${event.name} by ${event.location}`));
 
 
-console.log("Kölcsönző adatai (ID: 1):");
-const borrowerDetails = library.getBorrowerDetails(1);
+console.log("résztvevő (ID: 1):");
+const borrowerDetails = myEvent.getParticipantDetails(1);
 if (borrowerDetails) {
   console.log(`Név: ${borrowerDetails.name}`);
-}*/
+}
